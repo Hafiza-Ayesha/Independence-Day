@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistan — A Story of Freedom | 79 Years</title>
+    <meta name="description"
+        content="An interactive journey through Pakistan's dream, struggle, independence and 79 years of freedom.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;0,9..144,700;1,9..144,450&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- grain overlay -->
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav">
+        <a href="#top" class="nav__logo">CODE WITH AYESHA  <span>🇵🇰</span></a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="#top" class="navlink">Home</a></li>
+            <li><a href="#dream" class="navlink">The Dream</a></li>
+            <li><a href="#history" class="navlink">History</a></li>
+            <li><a href="#people" class="navlink">People</a></li>
+            <li><a href="#journey" class="navlink">Journey</a></li>
+            <li><a href="#gallery" class="navlink">Gallery</a></li>
+            <li><a href="#quiz" class="navlink">Quiz</a></li>
+            <li><a href="#celebrate" class="navlink navlink--cta">Celebrate</a></li>
+        </ul>
+    </nav>
+
+    <!-- 1. HERO -->
+    <header class="hero" id="top">
+        <canvas id="heroCanvas" class="hero__canvas"></canvas>
+        <div class="hero__vignette"></div>
+        <div class="hero__content">
+            <h1 class="hero__title">
+                <span class="line reveal-up" style="--d:1">THIS LAND.</span>
+                <span class="line reveal-up" style="--d:2">THIS FREEDOM.</span>
+                <span class="line reveal-up reveal-accent" style="--d:3">THIS PAKISTAN.</span>
+            </h1>
+            <p class="hero__sub reveal-up" style="--d:4">79 Years of Freedom • Unity • Sacrifice • Hope</p>
+
+            <div class="hero__number reveal-up" style="--d:5">
+                <span class="hero__number-big" id="heroCounter">0</span>
+                <span class="hero__number-label">YEARS OF<br>INDEPENDENCE</span>
+            </div>
+
+            <div class="hero__actions reveal-up" style="--d:6">
+                <a href="#dream" class="btn btn--ghost">Explore the Journey <span aria-hidden="true">→</span></a>
+                <button class="btn btn--solid" id="heroCelebrateBtn">Celebrate <span
+                        aria-hidden="true">🇵🇰</span></button>
+            </div>
+        </div>
+
+        <canvas id="heroFireworks" class="hero__fireworks"></canvas>
+
+        <div class="scroll-indicator" aria-hidden="true">
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 2. THE DREAM -->
+        <section class="dream" id="dream">
+            <div class="dream__inner">
+                <p class="eyebrow reveal">The Prologue</p>
+                <h2 class="dream__title reveal">Before There Was a Nation,<br>There Was a <em>Dream.</em></h2>
+                <p class="dream__body reveal">
+                    For generations, the Muslims of the subcontinent lived under foreign rule and searched for
+                    a way to protect their faith, language and future. What began as scattered voices of concern
+                    slowly gathered into a shared conviction — that a distinct homeland was not just a political
+                    demand, but a necessity for survival and dignity. Poets gave the dream words. Leaders gave it
+                    direction. Ordinary people gave it their lives.
+                </p>
+                <div class="dream__words" id="dreamWords">
+                    <span class="dream__word" data-i="0">Dream</span>
+                    <span class="dream__arrow">→</span>
+                    <span class="dream__word" data-i="1">Struggle</span>
+                    <span class="dream__arrow">→</span>
+                    <span class="dream__word" data-i="2">Unity</span>
+                    <span class="dream__arrow">→</span>
+                    <span class="dream__word" data-i="3">Freedom</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. INTERACTIVE HISTORY JOURNEY -->
+        <section class="history" id="history">
+            <div class="section-head">
+                <p class="eyebrow reveal">1857 — 1947</p>
+                <h2 class="section-title reveal">The Road to a Homeland</h2>
+                <p class="section-desc reveal">Drag the marker, or use the years, to move through nine decades that led
+                    a people to freedom.</p>
+            </div>
+
+            <div class="history__stage">
+                <div class="history__bg" id="historyBg"></div>
+                <div class="history__content">
+                    <span class="history__year" id="historyYear">1857</span>
+                    <h3 class="history__label" id="historyLabel">The War of Independence</h3>
+                    <p class="history__desc" id="historyDesc"></p>
+                </div>
+            </div>
+
+            <div class="history__track-wrap">
+                <div class="history__track" id="historyTrack">
+                    <div class="history__fill" id="historyFill"></div>
+                    <div class="history__handle" id="historyHandle" tabindex="0" role="slider"
+                        aria-label="History timeline" aria-valuemin="0" aria-valuemax="4" aria-valuenow="0"></div>
+                    <div class="history__ticks" id="historyTicks"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PEOPLE BEHIND THE DREAM -->
+        <section class="people" id="people">
+            <div class="section-head">
+                <p class="eyebrow reveal">Architects of a Nation</p>
+                <h2 class="section-title reveal">The People Behind the Dream</h2>
+            </div>
+
+            <div class="people__panels">
+                <article class="people__panel" id="panelJinnah">
+                    <div class="people__crescent" aria-hidden="true">☾</div>
+                    <div class="people__info">
+                        <img src="images/jinnah.jpg" alt="Muhammad Ali Jinnah" class="people__photo">
+                        <span class="people__role">Founder of Pakistan</span>
+                        <h3 class="people__name">Muhammad Ali Jinnah</h3>
+                        <p class="people__quote">"Faith, Unity, Discipline."</p>
+                        <p class="people__contribution">
+                            Quaid-e-Azam led the constitutional struggle for a separate Muslim homeland with
+                            unmatched legal precision and resolve, becoming Pakistan's first Governor-General
+                            on 14 August 1947.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="people__panel" id="panelIqbal">
+                    <div class="people__crescent" aria-hidden="true">☾</div>
+                    <div class="people__info">
+                        <img src="images/iqbal.jpg" alt="Allama Muhammad Iqbal" class="people__photo">
+                        <span class="people__role">Poet-Philosopher</span>
+                        <h3 class="people__name">Allama Muhammad Iqbal</h3>
+                        <p class="people__quote">"Khudi ko kar buland itna, ke har taqdeer se pehle..."</p>
+                        <p class="people__contribution">
+                            In his 1930 Allahabad Address, Iqbal gave voice to the idea of a separate
+                            Muslim state in North-West India — the intellectual seed from which Pakistan grew.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 5. 1947 -> 2026 JOURNEY -->
+        <section class="journey" id="journey">
+            <div class="section-head">
+                <p class="eyebrow reveal">79 Years. One Journey.</p>
+                <h2 class="section-title reveal">From a New Nation to Now</h2>
+            </div>
+
+            <div class="journey__stage">
+                <span class="journey__year" id="journeyYear">1947</span>
+                <h3 class="journey__label" id="journeyLabel">A New Beginning</h3>
+                <p class="journey__desc" id="journeyDesc"></p>
+            </div>
+
+            <div class="journey__slider-wrap">
+                <input type="range" id="journeySlider" class="journey__slider" min="1947" max="2026" value="1947"
+                    step="1">
+                <div class="journey__range-labels">
+                    <span>1947</span><span>2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. GALLERY -->
+        <section class="gallery" id="gallery">
+            <div class="section-head">
+                <p class="eyebrow reveal">Pakistan Through the Lens</p>
+                <h2 class="section-title reveal">A Land Worth Celebrating</h2>
+            </div>
+
+            <div class="gallery__grid" id="galleryGrid"></div>
+        </section>
+
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox__close" id="lightboxClose" aria-label="Close">✕</button>
+            <div class="lightbox__card">
+                <div class="lightbox__img" id="lightboxImg"></div>
+                <div class="lightbox__caption" id="lightboxCaption"></div>
+            </div>
+        </div>
+
+        <!-- 7. DID YOU KNOW -->
+        <section class="facts" id="facts">
+            <div class="section-head">
+                <p class="eyebrow reveal">Did You Know? 🇵🇰</p>
+                <h2 class="section-title reveal">Small Stories, Great Nation</h2>
+            </div>
+
+            <div class="facts__stage">
+                <div class="facts__card" id="factsCard">
+                    <div class="facts__face facts__face--front">
+                        <span class="facts__tag" id="factTag">History</span>
+                        <p class="facts__text" id="factText">Loading a fact…</p>
+                    </div>
+                </div>
+                <button class="btn btn--solid" id="factsBtn">Show Another Fact</button>
+            </div>
+        </section>
+
+        <!-- 8. QUIZ -->
+        <section class="quiz" id="quiz">
+            <div class="section-head">
+                <p class="eyebrow reveal">Test Yourself</p>
+                <h2 class="section-title reveal">How Well Do You Know Pakistan?</h2>
+            </div>
+
+            <div class="quiz__card" id="quizCard">
+
+                <div class="quiz__intro" id="quizIntro">
+                    <p>Seven questions. No pressure. Just pride.</p>
+                    <button class="btn btn--solid" id="quizStartBtn">Start the Quiz</button>
+                </div>
+
+                <div class="quiz__play" id="quizPlay" hidden>
+                    <div class="quiz__meta">
+                        <span id="quizCount">Question 1 / 7</span>
+                        <div class="quiz__progress">
+                            <div class="quiz__progress-fill" id="quizProgressFill"></div>
+                        </div>
+                    </div>
+                    <h3 class="quiz__question" id="quizQuestion"></h3>
+                    <div class="quiz__options" id="quizOptions"></div>
+                </div>
+
+                <div class="quiz__result" id="quizResult" hidden>
+                    <p class="eyebrow">Your Patriot Score</p>
+                    <div class="quiz__score" id="quizScore">0</div>
+                    <p class="quiz__score-msg" id="quizScoreMsg"></p>
+                    <button class="btn btn--ghost" id="quizRestartBtn">Try Again</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9. MAKE PAKISTAN SHINE -->
+        <section class="shine" id="celebrate">
+            <canvas id="shineCanvas" class="shine__canvas"></canvas>
+            <div class="shine__content">
+                <h2 class="shine__title reveal">Make Pakistan Shine</h2>
+                <button class="btn btn--solid btn--lg" id="shineBtn">Celebrate Pakistan 🇵🇰</button>
+                <p class="shine__banner" id="shineBanner" aria-hidden="true">PAKISTAN ZINDABAD!</p>
+            </div>
+        </section>
+
+        <!-- 10. OUR FUTURE -->
+        <section class="future" id="future">
+            <div class="future__inner">
+                <p class="eyebrow reveal">What Comes Next</p>
+                <h2 class="future__title reveal">The Next Chapter Is Ours.</h2>
+                <div class="future__timeline reveal">
+                    <span>1947</span><span class="future__dash">—</span><span>2026</span><span
+                        class="future__dash">—</span><span class="future__q">???</span>
+                </div>
+                <p class="future__body reveal">
+                    The next chapter belongs to a young country — one of the youngest populations on earth,
+                    building in technology, science, art and enterprise. The dream that began in 1930 and became
+                    a nation in 1947 is still being written, one generation at a time.
+                </p>
+                <p class="future__line reveal">The story continues with us.</p>
+            </div>
+        </section>
+
+        <!-- 11. FINAL CELEBRATION -->
+        <section class="final">
+            <div class="final__stars" aria-hidden="true"></div>
+            <div class="final__content">
+                <span class="final__number">79</span>
+                <span class="final__label">YEARS OF INDEPENDENCE</span>
+                <h2 class="final__title">ONE NATION.<br>ONE SPIRIT.<br>ONE PAKISTAN.</h2>
+                <p class="final__wish">Happy Independence Day 🇵🇰</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Made with pride for Pakistan's 79th Independence Day — 14 August 2026.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
